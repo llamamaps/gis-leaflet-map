@@ -1,0 +1,15 @@
+version: "3.8"
+volumes:
+  postgres_data:
+
+services:
+  postgis:
+    image: "mdillon/postgis"
+    hostname: postgis
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+networks:
+  default:
+    name: gist604b
